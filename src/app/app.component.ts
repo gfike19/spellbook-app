@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { SpellbookComponent } from './spellbook/spellbook.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  template: `
+    <app-spellbook></app-spellbook>
+  `,
+  imports: [SpellbookComponent]
 })
-export class AppComponent {
-  title = 'spellbook-app';
-}
+export class AppComponent {}
