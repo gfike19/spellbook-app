@@ -1,6 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { Spell } from '../models/spell.model';
 
 @Component({
   selector: 'app-spellbook',
@@ -16,11 +17,11 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule]
 })
 export class SpellbookComponent implements OnInit {
-  spells: any[] | null = null;
+  spells: Spell[] | null = null;
   private http = inject(HttpClient);
 
   ngOnInit() {
-    this.http.get<any[]>('https://web-develop-e516.up.railway.app/spellbook')
+    this.http.get<Spell[]>('https://web-develop-e516.up.railway.app/spellbook')
       .subscribe(data => this.spells = data);
   }
 }
